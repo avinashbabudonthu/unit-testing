@@ -41,8 +41,8 @@ gradle init --type pom
 * Create **features** folder in **src/test/resources**
 * Create **[sum.feature](src/test/resources/features/sum.feature)** file
 * Write **Gherkin** feature with variables
-* Write **[SumStepDefinition.java](src/test/java/com/calculate/SumStepDefinition.java)*** 
-* **[SumStepDefinition.java](src/test/java/com/calculate/CalculatorTest.java)** is mapped to **[sum.feature](src/test/resources/features/sum.feature)**
+* Write **[SumStepDefinition.java](src/test/java/com/calculate/SumStepDefinition.java)**
+* **[SumStepDefinition.java](src/test/java/com/calculate/SumStepDefinition.java)** is mapped to **[sum.feature](src/test/resources/features/sum.feature)**
 * Write **[CucumberTest.java](src/test/java/com/calculate/CucumberTest.java)**
 * Declare below annotations at class level
 ```

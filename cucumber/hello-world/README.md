@@ -22,13 +22,13 @@ gradle init --type pom
 * Create **features** folder in **src/test/resources**
 * Create **[calculator_functions.feature](src/test/resources/features/calculator_functions.feature)** file
 * Write **Gherkin** feature
-* Write **[CalculatorTest.java](src/test/java/com/calculator/CalculatorTest.java)**
-* **[CalculatorTest.java](src/test/java/com/calculator/CalculatorTest.java)** is mapped to **[calculator_functions.feature](src/test/resources/features/calculator_functions.feature)**
-* Write **[CucumberTest.java](src/test/java/com/calculator/CucumberTest.java)**
+* Write **[CalculatorTest.java](src/test/java/com/calculate/CalculatorTest.java)**
+* **[CalculatorTest.java](src/test/java/com/calculate/CalculatorTest.java)** is mapped to **[calculator_functions.feature](src/test/resources/features/calculator_functions.feature)**
+* Write **[CucumberTest.java](src/test/java/com/calculate/CucumberTest.java)**
 * Declare below annotations at class level
 ```
 @RunWith(Cucumber.class)
 @CucumberOptions(plugin = { "pretty", "html:target/cucumber" }, snippets = SnippetType.CAMELCASE, features = "classpath:features")
 ```
-* Right click on **[CucumberTest.java](src/test/java/com/calculator/CucumberTest.java)** - Run As - Junit Test
+* Right click on **[CucumberTest.java](src/test/java/com/calculate/CucumberTest.java)** - Run As - Junit Test
 * Feature should be executed successfully

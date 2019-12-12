@@ -18,6 +18,7 @@ gradle init --type pom
 * [Hello World Calculator](#hello-world-calculator)
 
 ### Hello World Calculator
+* Create Core Java project using [maven](#create-project-using-maven)
 * Create source folder - **src/test/resources**
 * Create **features** folder in **src/test/resources**
 * Create **[calculator_functions.feature](src/test/resources/features/calculator_functions.feature)** file

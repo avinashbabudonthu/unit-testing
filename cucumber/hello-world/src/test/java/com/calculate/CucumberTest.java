@@ -7,7 +7,8 @@ import cucumber.api.SnippetType;
 import cucumber.api.junit.Cucumber;
 
 @RunWith(Cucumber.class)
-@CucumberOptions(plugin = { "pretty" }, snippets = SnippetType.CAMELCASE, features = "classpath:StepDefinition")
+@CucumberOptions(plugin = { "pretty",
+		"html:target/cucumber" }, snippets = SnippetType.CAMELCASE, features = "classpath:features")
 public class CucumberTest {
 
 }

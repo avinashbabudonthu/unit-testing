@@ -22,10 +22,10 @@ gradle init --type pom
 * Create Core Java project using [maven](#create-project-using-maven)
 * Create source folder - **src/test/resources**
 * Create **features** folder in **src/test/resources**
-* Create **[calculator_functions.feature](src/test/resources/features/calculator_functions.feature)** file
+* Create **[calculator.feature](src/test/resources/features/calculator.feature)** file
 * Write **Gherkin** feature
-* Write **[CalculatorTest.java](src/test/java/com/calculate/CalculatorTest.java)**
-* **[CalculatorTest.java](src/test/java/com/calculate/CalculatorTest.java)** is mapped to **[calculator_functions.feature](src/test/resources/features/calculator_functions.feature)**
+* Write **[CalculatorStepDefinition.java](src/test/java/com/calculate/CalculatorStepDefinition.java)**
+* **[CalculatorStepDefinition.java](src/test/java/com/calculate/CalculatorStepDefinition.java)** is mapped to **[calculator.feature](src/test/resources/features/calculator.feature)**
 * Write **[CucumberTest.java](src/test/java/com/calculate/CucumberTest.java)**
 * Declare below annotations at class level
 ```

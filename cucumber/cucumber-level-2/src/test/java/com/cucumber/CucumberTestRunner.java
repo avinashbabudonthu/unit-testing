@@ -7,9 +7,10 @@ import org.mockito.junit.MockitoRule;
 
 import cucumber.api.CucumberOptions;
 import cucumber.api.SnippetType;
-import cucumber.api.junit.Cucumber;
+import net.serenitybdd.cucumber.CucumberWithSerenity;
 
-@RunWith(Cucumber.class)
+// @RunWith(Cucumber.class)
+@RunWith(CucumberWithSerenity.class)
 @CucumberOptions(plugin = { "pretty", "html:target/cucumber" }, snippets = SnippetType.CAMELCASE, glue = {
 		"com.cucumber.step.definitions" }, features = { "classpath:features/calculator.sum",
 				"classpath:features/scenario.outline", "classpath:features/mockito" })

@@ -1,36 +1,24 @@
 package com.springboot.spock.controller
 
-import com.springboot.spock.repository.AppRepository
-import org.springframework.beans.factory.annotation.Autowired
-import org.springframework.boot.test.context.SpringBootTest
+import com.springboot.spock.service.AppService
+import com.sun.deploy.uitoolkit.impl.awt.AWTDragHelper
 import spock.lang.Specification
 
-@SpringBootTest(webEnvironment = SpringBootTest.WebEnvironment.NONE)
 class AppControllerTest extends Specification {
 
-    /*@SpringBean
-    AppService appService = Stub() {
-        findNumbers() >> Arrays.asList(7, 8, 9, 10)
-    }*/
-
-    /*@SpringBean
-    AppRepository appRepository = Stub(){
-        findIntegerList() >> Arrays.asList(7, 8, 9, 10)
-    }*/
-
-    AppRepository appRepository = Stub() {
-        findIntegerList()
+    AppService appService = Stub(){
+        findNumbers() >> [7, 8, 9, 10]
     }
 
-    @Autowired
-    AppController appController
+    AppController appController = new AppController(appService: appService)
 
-    void "find numbers test"() {
+    def "find number unit testing"(){
         when:
             println appController
-            List<Integer> list = appController.findNumbers()
-            println list
+            println appService
+            List<Integer> result = appController.findNumbers()
         then:
-        [7, 8, 9, 10] == list
+            result == [7, 8, 9, 10]
     }
+
 }

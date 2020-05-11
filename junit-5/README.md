@@ -1,64 +1,29 @@
-# Async Controller
+# Junit 5
 
-* Problem Statement
-```
-Consume 3 API asynchronously. Wrap 3 API calls response and return final response. 3 API calls run in parallel
-```
+## Requirement
+* Junit 5 unit testing practice examples
 
-## Create project using maven
-```
-mvn archetype:generate -DgroupId=com.junit5 -DartifactId=junit-5 -Dversion=1.0 -DarchetypeArtifactId=maven-archetype-quickstart -DinteractiveMode=false
-```
+## Dependencies
+* Refer [pom.xml](pom.xml) or [build.gradle](build.gradle)
 
-## Add gradle
-```
-gradle init --type pom
-```
+## Logging
+* Refer [log4j.properties](src/main/resources/log4j.properties)
 
-## Versions
-* Maven **3.5.2**
-* Gradle **5.0**
+## Examples
+* [AfterAnnotations.java](src/test/java/com/junit5/AfterAnnotations.java)
+* [AssertionsJunit5.java](src/test/java/com/junit5/AssertionsJunit5.java)
+* [Assumptions.java](src/test/java/com/junit5/Assumptions.java)
+* [BeforeAnnotations.java](src/test/java/com/junit5/BeforeAnnotations.java)
+* [DisabledAnnotation.java](src/test/java/com/junit5/DisabledAnnotation.java)
+* [DisplayNameAnnotation.java](src/test/java/com/junit5/DisplayNameAnnotation.java)
+* [DynamicTest.java](src/test/java/com/junit5/DynamicTest.java)
+* [Exceptions.java](src/test/java/com/junit5/Exceptions.java)
+* [SelectPackagesTestSuite.java](src/test/java/com/junit5/SelectPackagesTestSuite.java)
+* [Tags.java](src/test/java/com/junit5/Tags.java)
 
-## Steps
-* Add spring boot dependencies. Refer [pom.xml](pom.xml) or [build.gradle](build.gradle)
-* Create **async.controller.config.AppConfig** class. Declare annotation **org.springframework.scheduling.annotation.EnableAsync**
-* Create **async.controller.service.AsyncService** class. Declare methods calling API with annotation **org.springframework.scheduling.annotation.Async**
-* All async methods in service class return **java.util.concurrent.CompletableFuture**
-* Create **async.controller.controller.AsyncController**. Call API consuming method in service class
-
-## API
-* Refer [files/async-controller.postman_collection.json](files/async-controller.postman_collection.json)
-
-## Run this project
-* Import project into IDE as Maven or Gradle project
-* Execute App class in each package
-
-## Run using maven
-```
-mvn clean compile spring-boot:run
-```
-
-## Run using gradle
-```
-gradlew clean compileJava bootRun
-```
-
-## Create package using maven
-```
-mvn clean compile package
-```
-
-## Create package using gradle
-```
-gradlew clean compileJava build
-```
-
-## Execute jar of Maven
-```
-java -jar target\async-controller.jar
-```
-
-## Execute jar of Gradle
-```
-java -jar build\libs\async-controller.jar
-```
+## Materials
+* Pluralsight
+	* JUnit 5 Fundamentals
+	* Getting Started Unit Testing with JUnit 5
+	* TDD with JUnit 5
+	* TDD with Spring and JUnit 5

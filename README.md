@@ -14,6 +14,7 @@ Good unit tests should follow acronym **FIRST**
 * [Mockito](mockito)
 * [Power Mock](power-mock)
 * [Spock](spock)
+* [Weld](weld)
 
 # Materials
 ## Pluralsight

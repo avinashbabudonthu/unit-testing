@@ -5,3 +5,4 @@
 * [Difference Between Stub, Mock, and Spy in the Spock Framework](https://www.baeldung.com/spock-stub-mock-spy)
 * [Stubbing and Mocking in Java with the Spock Testing Framework](https://semaphoreci.com/community/tutorials/stubbing-and-mocking-in-java-with-the-spock-testing-framework)
 * [Introduction to Testing with Spock and Groovy](https://www.baeldung.com/groovy-spock)
+* [Testing with Spring and Spock](https://www.baeldung.com/spring-spock-testing)

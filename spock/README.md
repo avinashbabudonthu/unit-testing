@@ -6,3 +6,4 @@
 * [Stubbing and Mocking in Java with the Spock Testing Framework](https://semaphoreci.com/community/tutorials/stubbing-and-mocking-in-java-with-the-spock-testing-framework)
 * [Introduction to Testing with Spock and Groovy](https://www.baeldung.com/groovy-spock)
 * [Testing with Spring and Spock](https://www.baeldung.com/spring-spock-testing)
+* [Spocklight: Check for Exceptions with Spock](https://mrhaki.blogspot.com/2011/01/spocklight-check-for-exceptions-with.html)

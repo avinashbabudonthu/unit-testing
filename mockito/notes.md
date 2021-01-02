@@ -110,3 +110,86 @@ Mockito.verify(employeeServiceMock).getEmployee(empId);
 
 Mockito.verify(employeeServiceMock, Mockito.times(2)).getEmployee(empId);
 ```
+* How many times mock method being called in method under test
+```
+VerificationSettings.times(n)
+```
+* Mock method must be called at least once and also can be called more than once
+```
+atLeastOnce()
+```
+* minimum number of times that mock method must be called in method under test and also can be called more than n time but not less than n times
+```
+atLeast(n)
+```
+* maximum number of time that mock method can be called in method under test
+```
+atMost(n)
+```
+* mock operation should never be called by method under test. Generally used while testing alternate paths of code
+```
+never()
+```
+* declares that mock should have absolutely no interaction throughout the execution of the test method
+```
+Mockito.verify(..).zeroInteractions()
+```
+* there may have been certain operations called on the mock, but no others were expected in the alternative paths of code
+```
+Mockito.verify(..).noMoreInteractions()
+```
+* Argument Matchers
+	* provides extra control of stubs and verification of calls. Argument matchers allow alternatives for matching based on equals method often providing a more generic specification of a method stub by explicitly declaring the matching strategy
+	* org.mockito.Matchers
+	* org.mockito.Mockito
+```
+Mockito.mock(employeeServiceMock.getEmployee(Matchers.anyString()) ).thenReturn(employeeFixture);
+if method has 2 arguments: Mockito.mock(employeeServiceMock.findByIdAndName( Matchers.eq("1L"), Matchers.anyString()) ) .thenReturn(employeeFixture);
+```
+* Different methods in org.mockito.Matchers
+	* Matchers is base class of Mockito class (i.e public class Mockito extends Matchers )
+	* Matchers.eq(..)
+	* Matchers.any(String.class) (or) ((String)Matchers.any())
+	* Matchers.anyInt()
+	* Matchers.anyDouble()
+	* (Set<String>)Matchers.anySet() (or) Matchers.anySetOf(String.class)
+	* Matchers.eq("Johny");
+	* Matchers.contains("ohn");
+	* Matchers.startsWith("Jo");
+	* Matchers.endsWith("ny");
+	* Matchers.match("^(Jo|Ko)hny");
+	* Matchers.same(ref)
+	* Matchers.refEq(ref)
+	* Matchers.refEq(ref, "excludeField");
+* Stubbing consecutive calls with different responses
+```
+Mockito.mock(employeeServiceMock.getEmployee(Matchers.anyInt())).thenThrow(NoObjectException.class).thenReturn(employeeFixture);
+```
+* InOrder verifier
+	* Now in method under test if methods getEmployee, getSalary are not executed in the order specified above then test will fail
+```
+InOrder inOrderVerifier = Mockito.inOrder(employeeServiceMock, financeServiceMock);
+inOrderVerifier.verify(employeeServiceMock).getEmployee(employeeFixture);
+inOrderVerifier.verify(financeServiceMock).getSalary(salaryFixture);
+```
+* Argument Captures
+	* If method under test creating an object but does not returning then how to test the object whether it is constructed correctly? This can be done using argument captures
+	* ArgumentCaptor allows you to capture the actual object passed into the mock
+```
+Mockito.mock(mockOrderDao.insert(Mockito.any(OrderEntity.class)) ).thenReturn(1);
+
+// original method in which orderDao.insert(orderEntity) is getting called. With id=1 OrderEntity object will be created
+String orderNumber = this.target.openNewOrder(1);
+
+ArgumentCaptor<OrderEntity> orderEntityCaptor = ArgumentCaptor.forClass(OrderEntity.class);
+Mockito.verify(mockOrderDao).insert(orderEntityCaptor.capture() );
+OrderEntity orderEntity = orderEntityCaptor.getValue();
+Assert.assertEqual(1, orderEntity.getCustomerId() );
+```
+* Partial Mocks
+	* We can mock interfaces and classes. If we mock certain operation on interfaces and mock certain operation on class then that is calles Partial Mocks
+* Mock vs Spy
+	* We can mock invocations using mock or spy
+* Spy
+	* Spy wraps an existing instance of an object inside the proxy and its default nature is to call the real method
+	* The method invocations are only mocked when you explicitely stub the call. In this case proxy knows to bypass the real method call

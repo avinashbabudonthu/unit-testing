@@ -6,25 +6,9 @@
 	* We cannot mock private methods.
 	* we cannot mock static methods
 * Steps to implement mockito
-	* Declare this annotation at test class level
-```
-@RunWith(org.mockito.runners.MockitoJunitRunner.class)
-```
-	* To create injected object annotate them with this
-```
-@Mock
-private ProductDo productDo;
-```
-	* To inject created mock object into target object
-```
-@InjectMocks
-private ProductBo productBo;
-```
-	* Annotate init method with annotation
-```
-@Before
-```
-	* In the init method
-```
-MockitoAnnotations.initMocks(this);
-```
+	* Declare this annotation at test class level`@RunWith(org.mockito.runners.MockitoJunitRunner.class)`
+	* To create injected object annotate them with this `@Mock private ProductDo productDo;`
+	* To inject created mock object into target object `@InjectMocks private ProductBo productBo;`
+	* Annotate init method with annotation `@Before`
+	* In the init method `MockitoAnnotations.initMocks(this);`
+	

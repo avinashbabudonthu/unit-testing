@@ -151,8 +151,6 @@ public class Exceptions{
 ```
 ## Junit 5
 
-## Mockito
-
 ## PowerMock
 
 ## Easymock
